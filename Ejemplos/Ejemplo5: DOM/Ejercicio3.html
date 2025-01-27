@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejemplo 3 - Hello World JS</title>
+    </head>
+    <body>
+        <h1 id="titulo" atributoInventado="valorAtributo">Aprendiendo JavaScript Moderno</h1>
+        <p>Hola Mundo!</p>
+        <p class="importante">Adiós mundo <em>cruel</em></p>
+        <span class="importante">Esto es muy importante</span>
+        <script>
+            let titulo = document.getElementById("titulo");
+            console.log("El titulo de la página es: " + titulo.innerHTML); //Aprendiendo JavaScript Moderno
+            titulo.innerHTML = "Le cambio el titulo";
+            titulo.className="upper";
+            titulo.setAttribute("name","pepe");
+        </script> 
+     </body>
+</html>
