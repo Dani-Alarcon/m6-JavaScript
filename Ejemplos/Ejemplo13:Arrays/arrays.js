@@ -1,21 +1,38 @@
 //Problema 1
-let sumarPares= [2,4,5,6,7,8,3,1,10,4]
+let sumarPares = [2, 4, 5, 6, 7, 8, 3, 1, 10, 4]
 let sumaTotal = 0
-for(i in sumarPares.length){
+for (i in sumarPares.length) {
     comprovarPar(sumarPares, i, sumaTotal)
 }
 
-function comprovarPar(array, iterador, total){
-    if(array[iterador] % 2 == 0){
+function comprovarPar(array, iterador, total) {
+    if (array[iterador] % 2 == 0) {
         total += array[iterador]
     }
 }
 
 //Problema 2
 
-let ordenDatos = ["Rodriguez", "8", 9, '5',4, 'Clara']
+let ordenDatos = ["Rodriguez", "8", 9, '5', 4, 'Clara']
 
-ordenDatos.concat(6.5)
+function problema2(ordenDatos) {
+    let nombre = ordenDatos.pop()
+    ordenDatos.unshift(nombre)
+
+    let suma = 0
+
+    for (let i = 2; i < ordenDatos.length; i++) {
+        let num = parseInt(ordenDatos[i])
+        suma += num
+
+    }
+    let media = suma / (ordenDatos.length - 2)
+    ordenDatos.push(media)
+
+    return ordenDatos
+}
+console.log(problema2(ordenDatos))
+
 
 //Problema 3
 
@@ -25,15 +42,14 @@ let filterWords3 = ["Mercedes", "Bmw", "Audi", "Porche"];
 
 let todoJunto = filterWords1.concat(filterWords2, filterWords3)
 console.log("Array al principio: " + todoJunto)
-for(elemento of todoJunto){
-    mirarZ(elemento, todoJunto)
-    console.log("Palabras SIN z: "+ elemento)
-}
 
-function mirarZ(elemento, arrayPalabras){
-    let eliminados
-    if (elemento.startsWith('Z')){
-        eliminados = arrayPalabras.splice(elemento, 1)
-        console.log("Palabras CON z "+ eliminados)
+mirarZ(todoJunto)
+
+function mirarZ(arrayPalabras) {
+    let eliminados = []
+    for (elemento of arrayPalabras) {
+        if (!elemento.startsWith('Z')) {
+        eliminados.push(elemento)
+    }
     }
 }
