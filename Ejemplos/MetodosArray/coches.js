@@ -25,7 +25,10 @@ let cochesFiltrados = coches.filter(coche => coche[0] !== 'Alfa Romeo' && coche[
 console.log(cochesFiltrados)
 
 //Ordena el array ordenado por precio descendentemente.
-console.log(coches.sort(coches[3]))
+console.log(coches.sort((a, b) => b[3] - a[3]))
 
 //Devuelve el array con un 20% de rebaja al precio.
 
+let bajarPrecio = coches.map(precio => precio[3] * 0.2)
+
+console.log(bajarPrecio)
