@@ -31,7 +31,7 @@ function tienenElementosEnComun(array1, array2) {
         if (setArray1.has(element)) {
             repetido = true
         }
-    });
+    }) 
     return repetido
 
 }
