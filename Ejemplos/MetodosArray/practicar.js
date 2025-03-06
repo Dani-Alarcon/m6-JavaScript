@@ -105,22 +105,25 @@ console.log(multiplos5(miArrayEx8))
 
 //Ejercicio 9
 const miArrayEx9 = ['zapato', 'gato', 'zarza', 'paco', 'si']
-function filtrarLong(miArrayEx9) {
+//Función que recibe un array y que devuelve el primer elemento cuyo tamaño sea superior o igual a 5.
+function tamanySuperior5(miArrayEx9) {
     return miArrayEx9.find(long => long.length >= 5)
 }
 console.log("Ejercicio 9")
-console.log(filtrarLong(miArrayEx9)) 
+console.log(tamanySuperior5(miArrayEx9)) 
 
 //Ejercicio 10
-const miArrayEx10 = ['pepe', 'zapato', 'gato', 'zarza', 'paco', 'si']
-function filtrarUltimaLetra(miArrayEx10) {
+const miArrayEx10 = ['pepe', 'zapato', 'gato', 'adios', 'paco', 'si']
+//Función que recibe un array y que devuelve el último elemento que empieza por P.
+function devolverUltimoP(miArrayEx10) {
     return miArrayEx10.reverse().find(palabra => palabra.startsWith('p'))
 }
 console.log("Ejercicio 10")
-console.log(filtrarUltimaLetra(miArrayEx10)) 
+console.log(devolverUltimoP(miArrayEx10)) 
 
 //Ejercicio 11
-const miArrayEx11 = ['pepe', 'tapa', 'gato', 'tacon', 'paco', 'si']
+const miArrayEx11 = ['pepe', 'tapa', 'gato', 'tacon', 'paco', 'hola']
+//Función que recibe un array y que devuelve la posición del primer elemento que empieza por T.
 function filtrarPosicion(miArrayEx11) {
     return miArrayEx11.findIndex(palabra => palabra.startsWith('t'))
 }
@@ -128,17 +131,19 @@ console.log("Ejercicio 11")
 console.log(filtrarPosicion(miArrayEx11)) 
 
 //Ejercicio 12
-const miArrayEx12 = [77, 55, 4, 22, 5, 15, 20,]
-function filtrarUltimoPar(miArrayEx12) {
+const miArrayEx12 = [77, 55, 4, 22, 5, 15, 20]
+//Función que recibe un array y que devuelve el último elemento par.
+function ultimoParEnArray(miArrayEx12) {
     return miArrayEx12.reverse().find(numPar => numPar % 2 == 0)
 }
 console.log("Ejercicio 12")
-console.log(filtrarUltimoPar(miArrayEx12)) 
+console.log(ultimoParEnArray(miArrayEx12)) 
 
 
 //Ejercicio 13
-const miArrayEx13 = [1, 2, 3, 4, 5, 6, 7]
-function sumaElementos(miArrayEx13) {
+const miArrayEx13 = [9, 1, 4, 3, 5, 7, 3]
+//Función que recibe un array y que devuelve la suma de todos sus elementos.
+function sumarArray(miArrayEx13) {
     let sumaFinal = 0
     miArrayEx13.forEach(num => {
         sumaFinal = num + sumaFinal
@@ -146,19 +151,21 @@ function sumaElementos(miArrayEx13) {
     return sumaFinal
 }
 console.log("Ejercicio 13")
-console.log(longitudStrings(miArrayEx13)) 
+console.log(sumarArray(miArrayEx13)) 
 //Ejercicio 14
 const miArrayEx14 = [20, 17, 13, 8, 9, 12, 2]
-function restaElementos(miArrayEx14) {
+//Función que recibe un array y que devuelve la resta del primer elemento menos el segundo y así sucesivamente.
+function restarArray(miArrayEx14) {
     return miArrayEx14.reduce((acumulador, num) => acumulador - num) 
 }
 console.log("Ejercicio 14")
-console.log(restaElementos(miArrayEx14)) 
+console.log(restarArray(miArrayEx14)) 
 
 //Ejercicio 15
 const miArrayEx15 = [3, 9, 9, 11, 13, 17, 20]
-function restaElementosReverse(miArrayEx15) {
+//Función que recibe un array y que devuelve la resta del último elemento menos el penúltimo y así sucesivamente.
+function restarArraySucesivo(miArrayEx15) {
     return miArrayEx15.reverse().reduce((acumulador, num) => acumulador - num) 
 }
 console.log("Ejercicio 15")
-console.log(longitudStrings(miArrayEx15)) 
+console.log(restarArraySucesivo(miArrayEx15)) 
