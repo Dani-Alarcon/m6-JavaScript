@@ -13,9 +13,11 @@ boton.addEventListener("mouseover", () => {
 })
 
 document.addEventListener("keypress", () =>{
-    if (shiftKey) {
-        text = "The SHIFT key was pressed!";
+    let text = ''
+    if (event.key == "Enter") {
+        text = "Click en ENTER";
       } else {
-        text = "The SHIFT key was NOT pressed!";
+        text = "No click en ENTER";
       }
+      console.log(text)
 })
