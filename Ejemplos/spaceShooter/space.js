@@ -1,15 +1,14 @@
-
 document.addEventListener('mousemove', (event) => {
     const cajaRoja = document.getElementById('cajaRoja');
-    cajaRoja.style.left = `${event.clientX}px`
-    cajaRoja.style.right = `${event.clientY}px`
-    console.log('El raton se mueve')
+    cajaRoja.style.left = `${event.clientX}px`;
+    cajaRoja.style.top = `${event.clientY}px`;
+    console.log('El ratón se mueve');
 });
 
-document.addEventListener("keypress", (event) => {
-    if (event.key === " ") {
+document.addEventListener("keydown", (event) => {
+    if (event.code === "Space") {
         dispararBala();
-        console.log('Click en espacio')
+        console.log('Click en espacio');
     }
 });
 
@@ -19,7 +18,7 @@ function dispararBala() {
     bala.classList.add("bala");
     document.body.appendChild(bala);
 
-    let x = cajaRoja.offsetLeft + cajaRoja.width / 2;
+    let x = cajaRoja.offsetLeft + cajaRoja.offsetWidth / 2 - 2.5;  // Centrar la bala
     let y = cajaRoja.offsetTop;
 
     bala.style.left = `${x}px`;
@@ -27,12 +26,11 @@ function dispararBala() {
 
     let intervalo = setInterval(() => {
         y -= 5;
-        bala.style.top = `${y}px`
+        bala.style.top = `${y}px`;
         if (y < 0) {
             clearInterval(intervalo);
             bala.remove();
         }
     }, 20);
-    console.log('Se ha disparado')
-
+    console.log('Se ha disparado');
 }
