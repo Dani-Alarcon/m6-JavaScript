@@ -1,19 +1,40 @@
-function abrirVentana(){
-    const features= "left = 200, right = 200, height = 350, width = 400"
-    open('cookiesVentana.html', 'ventana', features)
+// Función para verificar si la configuración ya fue establecida
+function configuracionGuardada() {
+    return document.cookie.includes("configurada=true");
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{
-    abrirVentana()
-})
-
-function crearCookies(){
-    let fondo = document.getElementsByName('fondo')
-    let fuente = document.getElementsByName('fuente')
-    document.cookie = `fondo=${fondo}`
-    document.cookie = `fuente=${fuente}`
+// Función para obtener el valor de una cookie
+function obtenerCookie(nombre) {
+    let cookies = document.cookie.split('; ');
+    for (let i = 0; i < cookies.length; i++) {
+        let [key, value] = cookies[i].split('=');
+        if (key === nombre) return value;
+    }
+    return null;
 }
 
-document.getElementById('guardar').addEventListener('click', ()=>{
-    crearCookies()
-})
+// Función para abrir la ventana de configuración solo si es la primera vez
+function abrirVentana() {
+    if (!configuracionGuardada()) {
+        const features = "left=200,top=200,width=400,height=350";
+        window.open('cookiesVentana.html', 'ventana', features);
+    }
+}
+
+// Función para aplicar los colores guardados en cookies
+function aplicarEstilos() {
+    let fondo = obtenerCookie('fondo');
+    let fuente = obtenerCookie('fuente');
+
+    if (fondo) document.body.style.backgroundColor = fondo;
+    if (fuente) {
+        let titulo = document.getElementById('titulo');
+        if (titulo) titulo.style.color = fuente;
+    }
+}
+
+// Código que se ejecuta cuando la página principal ha cargado
+document.addEventListener("DOMContentLoaded", () => {
+    abrirVentana();
+    aplicarEstilos();
+});
