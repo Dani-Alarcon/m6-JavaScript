@@ -16,7 +16,7 @@ export class Alumno {
     }
     calcularMedia(ponderacion) {
         if (typeof ponderacion != String) {
-            let notaMedia = this.notas.reduce((total, nota) => (nota * ponderacion) + total, 0)
+            let notaMedia = this.notas.reduce((total, nota, i) => total + nota * ponderacion[i], 0)
             return notaMedia.toFixed(2)
         } else {
             return 'No hay ponderacion para ese ciclo'
