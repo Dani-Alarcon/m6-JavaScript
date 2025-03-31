@@ -6,7 +6,7 @@ export class Alumno {
     constructor(nombre, apellidos, fechaNacimiento, email, ciclo, notas) {
         this.nombre = nombre
         this.apellidos = apellidos
-        this.fechaNacimiento = fechaNacimiento
+        this.fechaNacimiento = new Date(fechaNacimiento)
         this.email = email
         this.ciclo = ciclo
         this.notas = notas

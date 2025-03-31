@@ -50,8 +50,8 @@ function init() {
     console.log(gestorAlumnos.mostrarAlumnosOrdenados())
 
     //CALCULAR MEDIA
-    console.log(alumno.calcularMedia(alumno.elegirPonderacion()))
-    
+    console.log('Nota media: ' + alumno.calcularMedia(alumno.elegirPonderacion()))
+    console.log('Edad: ' + alumno.calcularEdad())
 }
 
 init();
