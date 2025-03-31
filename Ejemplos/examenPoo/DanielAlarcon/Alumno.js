@@ -12,7 +12,13 @@ export class Alumno {
         this.notas = notas
     }
     calcularEdad() {
-        return (2025 - this.fechaNacimiento[0].parseInt)
+        const hoy = new Date()
+        let edad = hoy.getFullYear() - this.fechaNacimiento.getFullYear()
+        const mesDiferencia = hoy.getMonth() - this.fechaNacimiento.getMonth()
+        if(mesDiferencia < 0 || (mesDiferencia<0 && hoy.getDate() < this.fechaNacimiento.getDate())){
+            edad--
+        }
+        return edad
     }
     calcularMedia(ponderacion) {
         if (typeof ponderacion != String) {
