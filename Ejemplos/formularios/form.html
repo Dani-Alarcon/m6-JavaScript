@@ -1,22 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="form.js" defer></script>
+  <title>Configuración</title>
+  <style>
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
-    <h2>Configuración</h2>
-    <form action="" method="get">
-        <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" required>
-        <label for="apellido">Apellido</label>
-        <input type="text" name="apellido" required>
-        <label for="email">Email</label>
-        <input type="email" name="email" required>
-        <label for="passw">Contraseña</label>
-        <input type="password" name="passw" required minlength="3">
-        <button type="submit">Enviar</button>
-    </form>
+  <h2>Configuración</h2>
+  <form id="miFormulario" action="" method="get" novalidate>
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre" />
+    <span id="errorNombre" class="error"></span><br>
+
+    <label for="apellido">Apellido</label>
+    <input type="text" name="apellido" id="apellido" /><br>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" />
+    <span id="errorEmail" class="error"></span><br>
+
+    <label for="passw">Contraseña</label>
+    <input type="password" name="passw" id="passw" />
+    <span id="errorPassw" class="error"></span><br>
+
+    <label for="edad">Edad</label>
+    <input type="number" name="edad" id="edad" />
+    <span id="errorEdad" class="error"></span><br>
+
+    <label for="telefono">Teléfono</label>
+    <input type="text" name="telefono" id="telefono" />
+    <span id="errorTelefono" class="error"></span><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+
 </body>
 </html>
