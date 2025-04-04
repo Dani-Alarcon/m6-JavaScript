@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="regex.js" defer></script>
+</head>
+<body>
+    <h2>Configuración</h2>
+    <form action="" method="get">
+        <label for="cp">Codigo postal</label>
+        <input type="number" name="cp" required>
+        <label for="nif">NIF</label>
+        <input type="text" name="nif" required>
+        <label for="numeroTelefono">Numero de telefono</label>
+        <input type="number" name="numeroTelefono" required>
+        <label for="iban">IBAN</label>
+        <input type="text" name="iban" required>
+        <button type="submit" onclick="elegirRegex('cp')">Enviar</button>
+    </form>
+</body>
+</html>
