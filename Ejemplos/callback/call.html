@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function obtenerDatos(callback) {
+            setTimeout(() => {
+                console.log("Datos obtenidos");
+                callback();
+            }, 2000);
+        }
+        function mostrarMensaje() {
+            console.log("Proceso terminado");
+            }
+        obtenerDatos(mostrarMensaje);
+
+    </script>
+</body>
+
+</html>
